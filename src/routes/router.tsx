@@ -3,9 +3,11 @@ import { AppLayout } from '../layouts/AppLayout';
 import { DashboardPage } from '../pages/DashboardPage';
 import { PlaceholderPage } from '../pages/PlaceholderPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { CustomersListPage } from '../features/customers/pages/CustomersListPage';
+import { CustomerCreatePage } from '../features/customers/pages/CustomerCreatePage';
+import { CustomerEditPage } from '../features/customers/pages/CustomerEditPage';
 
 const modulePages = [
-  { path: 'customers', title: 'Customers' },
   { path: 'suppliers', title: 'Suppliers' },
   { path: 'products', title: 'Products' },
   { path: 'inventory', title: 'Inventory' },
@@ -25,6 +27,9 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
       { path: 'dashboard', element: <DashboardPage /> },
+      { path: 'customers', element: <CustomersListPage /> },
+      { path: 'customers/new', element: <CustomerCreatePage /> },
+      { path: 'customers/:id/edit', element: <CustomerEditPage /> },
       ...modulePages.map((page) => ({
         path: page.path,
         element: <PlaceholderPage title={page.title} />,
