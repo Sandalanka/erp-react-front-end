@@ -18,13 +18,22 @@ dist-ssr
 
 coverage/
 
+# Build / bundler artifacts
+*.tsbuildinfo
+stats.html
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+*.swp
+*.swo
+*.sw?
+
+# OS files
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
