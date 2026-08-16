@@ -6,9 +6,11 @@ import { NotFoundPage } from '../pages/NotFoundPage';
 import { CustomersListPage } from '../features/customers/pages/CustomersListPage';
 import { CustomerCreatePage } from '../features/customers/pages/CustomerCreatePage';
 import { CustomerEditPage } from '../features/customers/pages/CustomerEditPage';
+import { SuppliersListPage } from '../features/suppliers/pages/SuppliersListPage';
+import { SupplierCreatePage } from '../features/suppliers/pages/SupplierCreatePage';
+import { SupplierEditPage } from '../features/suppliers/pages/SupplierEditPage';
 
 const modulePages = [
-  { path: 'suppliers', title: 'Suppliers' },
   { path: 'products', title: 'Products' },
   { path: 'inventory', title: 'Inventory' },
   { path: 'purchases', title: 'Purchases' },
@@ -30,6 +32,9 @@ export const router = createBrowserRouter([
       { path: 'customers', element: <CustomersListPage /> },
       { path: 'customers/new', element: <CustomerCreatePage /> },
       { path: 'customers/:id/edit', element: <CustomerEditPage /> },
+      { path: 'suppliers', element: <SuppliersListPage /> },
+      { path: 'suppliers/new', element: <SupplierCreatePage /> },
+      { path: 'suppliers/:id/edit', element: <SupplierEditPage /> },
       ...modulePages.map((page) => ({
         path: page.path,
         element: <PlaceholderPage title={page.title} />,
