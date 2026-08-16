@@ -3,10 +3,14 @@ import { AppLayout } from '../layouts/AppLayout';
 import { DashboardPage } from '../pages/DashboardPage';
 import { PlaceholderPage } from '../pages/PlaceholderPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { CustomersListPage } from '../features/customers/pages/CustomersListPage';
+import { CustomerCreatePage } from '../features/customers/pages/CustomerCreatePage';
+import { CustomerEditPage } from '../features/customers/pages/CustomerEditPage';
+import { SuppliersListPage } from '../features/suppliers/pages/SuppliersListPage';
+import { SupplierCreatePage } from '../features/suppliers/pages/SupplierCreatePage';
+import { SupplierEditPage } from '../features/suppliers/pages/SupplierEditPage';
 
 const modulePages = [
-  { path: 'customers', title: 'Customers' },
-  { path: 'suppliers', title: 'Suppliers' },
   { path: 'products', title: 'Products' },
   { path: 'inventory', title: 'Inventory' },
   { path: 'purchases', title: 'Purchases' },
@@ -25,6 +29,12 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
       { path: 'dashboard', element: <DashboardPage /> },
+      { path: 'customers', element: <CustomersListPage /> },
+      { path: 'customers/new', element: <CustomerCreatePage /> },
+      { path: 'customers/:id/edit', element: <CustomerEditPage /> },
+      { path: 'suppliers', element: <SuppliersListPage /> },
+      { path: 'suppliers/new', element: <SupplierCreatePage /> },
+      { path: 'suppliers/:id/edit', element: <SupplierEditPage /> },
       ...modulePages.map((page) => ({
         path: page.path,
         element: <PlaceholderPage title={page.title} />,
