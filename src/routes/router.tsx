@@ -9,9 +9,11 @@ import { CustomerEditPage } from '../features/customers/pages/CustomerEditPage';
 import { SuppliersListPage } from '../features/suppliers/pages/SuppliersListPage';
 import { SupplierCreatePage } from '../features/suppliers/pages/SupplierCreatePage';
 import { SupplierEditPage } from '../features/suppliers/pages/SupplierEditPage';
+import { ProductsListPage } from '../features/products/pages/ProductsListPage';
+import { ProductCreatePage } from '../features/products/pages/ProductCreatePage';
+import { ProductEditPage } from '../features/products/pages/ProductEditPage';
 
 const modulePages = [
-  { path: 'products', title: 'Products' },
   { path: 'inventory', title: 'Inventory' },
   { path: 'purchases', title: 'Purchases' },
   { path: 'sales', title: 'Sales' },
@@ -35,6 +37,9 @@ export const router = createBrowserRouter([
       { path: 'suppliers', element: <SuppliersListPage /> },
       { path: 'suppliers/new', element: <SupplierCreatePage /> },
       { path: 'suppliers/:id/edit', element: <SupplierEditPage /> },
+      { path: 'products', element: <ProductsListPage /> },
+      { path: 'products/new', element: <ProductCreatePage /> },
+      { path: 'products/:id/edit', element: <ProductEditPage /> },
       ...modulePages.map((page) => ({
         path: page.path,
         element: <PlaceholderPage title={page.title} />,
